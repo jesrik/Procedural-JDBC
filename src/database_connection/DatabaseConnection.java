@@ -20,7 +20,6 @@ public class DatabaseConnection {
 		connection = connect();
 	}
 	
-	
 	/**
 	 * Utility to create a connection between the server and application.
 	 * @return Connection 
@@ -41,7 +40,6 @@ public class DatabaseConnection {
 			return null;
 		}
 	}
-	
 	
 	/**
 	 * Utility to execute a procedure on server.
