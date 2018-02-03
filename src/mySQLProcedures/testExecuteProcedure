@@ -1,11 +1,11 @@
 CREATE  PROCEDURE `testExecuteProcedure`(in playerID int,
-										 in email varchar(255),
+					 in email varchar(255),
                                          in rank int)
 BEGIN
 
 	insert into testPlayer values(playerID, email, rank);
-    insert into testMatch values(999, playerID, 1, playerID);
+	insert into testMatch values(999, playerID, 1, playerID);
     
-    update testPlayer set rank = rank+1 where id = playerID;
+    	update testPlayer set rank = rank+1 where id = playerID;
 
 END
