@@ -1,11 +1,11 @@
 CREATE  PROCEDURE `testGetValues`(inout var1 double,
-								  inout var2 varchar(255),
+				  inout var2 varchar(255),
                                   inout var3 int)
 BEGIN
 
-	set var1 = 3.33333;
+    set var1 = 3.33333;
     set var2 = 'OUTPUT';
     set var3 = 13;
-	select var1, var2, var3;
+    select var1, var2, var3;
     
 END
