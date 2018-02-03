@@ -171,13 +171,19 @@ public class DatabaseConnection {
 	 */
 	private void setInput(CallableStatement cStatement, Object obj, int index) {
 		try {
-			if(obj.getClass().equals(Integer.class))
+			
+			Class<?> o = obj.getClass();
+			
+			if(o.equals(Integer.class))
 				cStatement.setInt(index+1, (int) obj);
 			
-			else if(obj.getClass().equals(String.class))
+			else if(o.equals(String.class))
 				cStatement.setString(index+1, (String) obj);
 			
-			else if(obj.getClass().equals(Double.class))
+			else if(o.equals(float.class))
+				cStatement.setFloat(index+1, (float) obj);
+			
+			else if(o.equals(Double.class))
 				cStatement.setDouble(index+1, (Double) obj);
 			
 			} catch (SQLException e) {
@@ -194,11 +200,15 @@ public class DatabaseConnection {
 	 */
 	private void getInput(CallableStatement cStatement, Object obj, int index, Object[] results) {
 		try {
+			
 			if(obj.equals(Integer.class))
 				results[index] = cStatement.getInt(index+1);
 			
 			else if(obj.equals(String.class))
 				results[index] = cStatement.getString(index+1);
+			
+			else if(obj.equals(float.class))
+				results[index] = cStatement.getFloat(index+1);
 			
 			else if(obj.equals(Double.class))
 				results[index] = cStatement.getDouble(index+1);
