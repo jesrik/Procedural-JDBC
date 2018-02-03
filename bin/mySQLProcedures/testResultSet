@@ -1,0 +1,6 @@
+CREATE PROCEDURE `testResultSet`()
+BEGIN
+
+	select p.email from testPlayer p;
+
+END
